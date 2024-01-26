@@ -4,7 +4,7 @@ public class CanonRotation : MonoBehaviour
 {
     public Vector3 _maxRotation;
     public Vector3 _minRotation;
-    private float offset = -51.6f;
+    private float offset = /*-51.6f*/-60f;
     public GameObject ShootPoint;
     public GameObject Bullet;
     public float ProjectileSpeed = 0;
@@ -31,7 +31,7 @@ public class CanonRotation : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             var projectile = Instantiate(Bullet, transform.position, Quaternion.identity);                                  //On s'instancia?
-            projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(ProjectileSpeed, ProjectileSpeed);                //quina velocitat ha de tenir la bala? s'ha de fer alguna cosa al vector direcció?
+            projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(ProjectileSpeed-0.5f, ProjectileSpeed-0.5f);                //quina velocitat ha de tenir la bala? s'ha de fer alguna cosa al vector direcció?
             ProjectileSpeed = 0f;
         }
         CalculateBarScale();
